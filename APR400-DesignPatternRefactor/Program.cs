@@ -1,3 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using APR400_DesignPatternRefactor;
 
-Console.WriteLine("Hello, World!");
+var users = new List<User>
+{
+    new User("Alice", "alice@email.com"),
+    new User("Bob", "bob@email.com")
+};
+
+var notifier = new Notifier();
+
+foreach (var user in users)
+{
+    notifier.SendEmail(user, "Welcome to the system!");
+}
+
+Console.WriteLine("Notifications sent.");
